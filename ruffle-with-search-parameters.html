@@ -14,15 +14,13 @@
 <style> body {background-color: #FFFFFF }</style>
 	
 <form>
-  <label for="tabName">Tab Name:</label><br>
-  <input type="text" id="tabName" name="tabName"><br>
+  <label for="tabName">Tab Name:</label><br><input type="text" id="tabName" name="tabName"><br>
+  
 	
-  <label for="tabImage">Tab Image:</label><br>
-  <input type="text" id="tabImage" name="tabImage">
+  <label for="tabImage">Tab Image:</label><br><input type="text" id="tabImage" name="tabImage">
+  
 	
-  <label for="ruffleScript">Path to Your Ruffle Script (ruffle.js):</label><br>
-  <input type="text" id="ruffleScript" name="ruffleScript">
-	
+  <label for="ruffleScript">Path to Your Ruffle Script (ruffle.js):</label><br><input type="text" id="ruffleScript" name="ruffleScript">	
 </form>
 	
 <script>
@@ -30,7 +28,7 @@ document.getElementByID("title").innerHTML = tabName; document.getElementByID("f
 	
 let params = new URLSearchParams(document.location.search);
 let gamefile = params.get("gamefile");
-document.getElementById("gamebox").innerHTML = ''+"<"+'embed id="gbEmbed" src="'+ gamefile +'" width="700" height="600"'+"></"+'embed'+"><"+'script src="'+ ruffleScript +'"'+"></"+'script'+">"+''
+document.getElementById("gamebox").innerHTML = ''+"<"+'embed id="bruhEmbed" src="'+ gamefile +'" width="700" height="600"'+"></"+'embed'+"><"+'script src="'+ ruffleScript +'"'+"></"+'script'+">"+''
 </script>
 
 <div id="gamebox"></div>
