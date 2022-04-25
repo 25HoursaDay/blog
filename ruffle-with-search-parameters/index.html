@@ -28,7 +28,7 @@ document.getElementByID("title").innerHTML = tabName; document.getElementByID("f
 	
 let params = new URLSearchParams(document.location.search);
 let gamefile = params.get("gamefile");
-document.getElementById("gamebox").innerHTML = ''+"<"+'embed id="bruhEmbed" src="'+ gamefile +'" width="700" height="600"'+"></"+'embed'+"><"+'script src="'+ ruffleScript +'"'+"></"+'script'+">"+''
+document.getElementById("gamebox").innerHTML = ''+"<"+'embed id="gameEmbed" src="'+ gamefile +'" width="700" height="600"'+"></"+'embed'+"><"+'script src="'+ ruffleScript +'"'+"></"+'script'+">"+''
 </script>
 
 <div id="gamebox"></div>
