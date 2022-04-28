@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-<!-- Div align in the middle -->
-<div style="margin-left:auto;margin-right:auto;text-align:center">
-	
-
-<head>
+<head style="margin-left:auto;margin-right:auto;text-align:center">
 <title id="Search Parameters | 25 Hour Blog">Example</title>
 <link id="favicon" rel="icon" type="image/x-icon" href="https://25hoursaday.github.io/favicon.ico">
 </head>
 	
-<body>
+<body style="margin-left:auto;margin-right:auto;text-align:left">
 <style> body {background-color: #FFFFFF }</style>
 	<h1>Search Parameters In Javascript and HTML</h1>
 	<h3>Introduction</h3>
-	<p> Search parameters are a way to get information from different elements. 
+	<p>Search parameters are a way to get information from different elements. 
 	In this lesson I will be showing you how to use search parameters for URLs. </p>
-	<h3> Url Search Parameters </h3>
-	<h4> Step one: </h4>
+	<h3>Url Search Parameters </h3>
 	<p>First, we need to create a variable with the value set to make a new object type.</p>
-	<img src="img_girl.jpg" alt="Example Code" width="500" height="600">
+	<img src="https://25hoursadsay.github.io/blog/search-parameters/UrlParams-StepOne.png" alt="Step One Example Code" width="537" height="39">
+	<p>Now we need to define what we are searching for in the query string. 
+	In this case we are searching for a value in the URL, so we need to use the location element with the search method to get the query string in the URL.</p> 
+	<img src="https://25hoursadsay.github.io/blog/search-parameters/UrlParams-StepTwo.png" alt="Step One Example Code" width="537" height="39">
+	<p>And finally, we need a way to get the query string</p>
 		
 let params = new URLSearchParams(document.location.search);
 let value = params.get("value");
