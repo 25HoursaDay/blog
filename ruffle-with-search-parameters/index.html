@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-<!-- Div align in the middle -->
-<div style="margin-left:auto;margin-right:auto;text-align:center">
-	
 
-<head>
-<title id="title">Example</title>
-<link id="favicon" rel="icon" type="image/x-icon" href="/images/favicon.ico">
-</head>
-	
-<body>
-<style> body {background-color: #FFFFFF }</style>
 	
 <script>
 document.getElementByID("title").innerHTML = tabName; document.getElementByID("favicon").href = tabImage;
@@ -20,6 +8,3 @@ let gameFile = params.get("gameFile");
 document.getElementById("gameBox").innerHTML = ''+"<"+'embed id="gameEmbed" src="'+ gameFile +'" width="700" height="600"'+"></"+'embed'+"><"+'script src="'+ ruffleScript +'"'+"></"+'script'+">"+''
 </script>
 <div id="gamebox"></div>
-</body>
-</div>
-</html>
