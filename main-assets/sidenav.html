@@ -12,13 +12,12 @@ document.head.appendChild(style);
 </script>
 </head>
 <body>
-
-<div class="sidenav"></div>
-  <script>
+<script>
 const sidenav = document.createElement('div');
 sidenav.setAttribute("class", "sidenav");
 sidenav.setAttribute("src", "https://25hoursaday.github.io/blog/main-assets/sidenav-div.html");
-  </script>
+document.body.appendChild(sidenav);
+</script>
 <div class="main">
 
   
@@ -31,24 +30,6 @@ sidenav.setAttribute("src", "https://25hoursaday.github.io/blog/main-assets/side
   
   
 </div>
-
-<script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
-</script>
-
+<script src="https://25hoursaday.github.io/blog/main-assets/dropdown.js"></script>
 </body>
 </html> 
