@@ -5,16 +5,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link id="favicon" rel="icon" type="image/x-icon" href="https://25hoursaday.github.io/favicon.ico">
 <script async src="https://arc.io/widget.min.js#nnUFwP4e"></script>
-<style></style>
 <script>
-var style = document.createElement('style');
-style.src = "https://25hoursaday.github.io/blog/main-assets/sidenav-style.css";
+const style = document.createElement('style');
+style.setAttribute("src", "https://25hoursaday.github.io/blog/main-assets/sidenav-style.css");
+document.head.appendChild(style);
 </script>
 </head>
 <body>
 
 <div class="sidenav"></div>
-
+  <script>
+const sidenav = document.createElement('div');
+sidenav.setAttribute("class", "sidenav");
+sidenav.setAttribute("src", "https://25hoursaday.github.io/blog/main-assets/sidenav-div.html");
+  </script>
 <div class="main">
 
   
