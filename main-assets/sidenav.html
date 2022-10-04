@@ -22,14 +22,12 @@
   <a href="#">Legal</a>
   </div>
   
-<div class="main"></div>
+<div class="main" src=bp></div>
 
 <script>
   let params = new URLSearchParams(document.location.search);
   let bp = params.get("bp");
-  
-  document.main.src = bp; });
-  
+  alert(bp);
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 for (i = 0; i < dropdown.length; i++) {
