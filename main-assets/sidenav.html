@@ -75,7 +75,7 @@ head {font-family: noto sans mono;}
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Link 1</a>
+    <a onclick="pg(https://25hoursaday.github.io/blog/main-assets/sidenav-tabs.html)">Link 1</a>
     <a href="#">Link 2</a>
     <a href="#">Link 3</a>
   </div>
@@ -85,12 +85,9 @@ head {font-family: noto sans mono;}
 <div class="main"></div>
 
 <script>
-  let params = new URLSearchParams(document.location.search);
-  let bp = params.get("bp");
- 
-  fetch(bp)
-  .then((result) => { return result.text(); })
-  .then((content) => { main.document.write(content); });
+function pg(url){
+   fetch(url).then((result) => { return result.text(); }).then((content) => { document.main.innerHTML = content; });
+}
  
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
