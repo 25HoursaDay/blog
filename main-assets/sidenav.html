@@ -1,4 +1,5 @@
 <head>
+<title></title>
 <link id="favicon" rel="icon" type="image/x-icon" href="https://25hoursaday.github.io/favicon.ico">
 <script async src="https://arc.io/widget.min.js#nnUFwP4e"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,15 +26,14 @@
 
 <script>
   let params = new URLSearchParams(document.location.search);
-  let bpage = params.get("bpage");
+  let bp = params.get("bp");
   
-   fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/sidenav-tabs.html")
+  fetch(bp)
   .then((result) => { return result.text(); })
   .then((content) => { document.main.innerHTML = content; });
   
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
-
 for (i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener("click", function() {
     this.classList.toggle("active");
@@ -46,5 +46,4 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 </script>
-
 </body>
