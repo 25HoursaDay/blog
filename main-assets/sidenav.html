@@ -1,18 +1,50 @@
-<head src="https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/sidenav-head.html"></head>
+<head>
+<link id="favicon" rel="icon" type="image/x-icon" href="https://25hoursaday.github.io/favicon.ico">
+<script async src="https://arc.io/widget.min.js#nnUFwP4e"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/sidenav.css">
+</head>
 
 <body>
-<div class="main">
-  <h2>Sidebar Dropdown</h2>
-  <p>Click on the dropdown button to open the dropdown menu inside the side navigation.</p>
-  <p>This sidebar is of full height (100%) and always shown.</p>
-  <p>Some random text..</p>
-</div>
+  <div class="sidenav">
+    <a href="#">Home</a>
+  <a href="#">Projects</a>
+  <button class="dropdown-btn">Blog 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+  <a href="#">Legal</a>
+  </div>
+  
+<div class="main"></div>
 
 <script>
-   fetch("https://raw.githubusercontent.com/25HoursaDay/bookmark/main/site/edu.html")
+  let params = new URLSearchParams(document.location.search);
+  let bpage = params.get("bpage");
+  
+   fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/sidenav-tabs.html")
   .then((result) => { return result.text(); })
   .then((content) => { document.main.innerHTML = content; });
+  
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
 </script>
 
 </body>
-</html> 
