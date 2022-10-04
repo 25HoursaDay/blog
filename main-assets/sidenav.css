@@ -1,6 +1,9 @@
 body {
   font-family: noto sans mono;
 }
+head {
+  font-family: noto sans mono;
+}
 .sidenav {
   position: absolute;
   height: 100%;
