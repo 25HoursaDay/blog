@@ -85,7 +85,7 @@ head {font-family: noto sans mono;}
 
 <script>
 function pg(url){
-   fetch(url).then((result) => { return result.text(); }).then((content) => { document.getElementById("main").append(content); });
+   fetch(url).then((result) => { return result.text(); }).then((content) => { alert(content); });
 }
  
 var dropdown = document.getElementsByClassName("dropdown-btn");
