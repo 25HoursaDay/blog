@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
- body {font-family: noto sans mono;}
+body {font-family: noto sans mono;}
 head {font-family: noto sans mono;}
 .sidenav {
   position: absolute;
@@ -21,7 +21,7 @@ head {font-family: noto sans mono;}
   position: absolute;
   padding-top: 10px;
 }
-.sidenav button, .dropdown-btn {
+.sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 10px;
   text-decoration: none;
   font-size: 16px;
@@ -36,7 +36,7 @@ head {font-family: noto sans mono;}
   cursor: pointer;
   outline: none;
 }
-.sidenav button:hover, .dropdown-btn:hover {
+.sidenav a:hover, .dropdown-btn:hover {
   color: red;
   background-color: #000000;
 }
@@ -68,25 +68,20 @@ head {font-family: noto sans mono;}
 
 <body>
   <div class="sidenav">
-    <button onclick="pg()">Home</button>
-  <button onclick="pg()">Projects</button>
-  <button class="dropdown-btn">Blog 
-    <i class="fa fa-caret-down"></i>
-  </button>
+    <a>Home</a>
+  <a>Projects</a>
+  <button class="dropdown-btn">Blog <i class="fa fa-caret-down"></i></button>
   <div class="dropdown-container">
-    <button onclick="pg()">Link 1</button>
-    <button onclick="pg()">Link 2</button>
-    <button onclick="pg()">Link 3</button>
+    <a>Link 1</a>
+    <a>Link 2</a>
+    <a>Link 3</a>
   </div>
-  <button onclick="pg('https://25hoursaday.github.io/blog/main-assets/sidenav-tabs.html')">Legal</button>
+  <a>Legal</a>
   </div>
   
-<object id="main" class="main"></object>
+<object class="main" data="https://25hoursaday.github.io/blog/main-assets/sidenav-tabs.html"></object>
 
 <script>
-function pg(lnk) {
- documnt.getElementById("main").data = lnk;
-}
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 for (i = 0; i < dropdown.length; i++) {
