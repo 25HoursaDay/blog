@@ -21,7 +21,7 @@ head {font-family: noto sans mono;}
   position: absolute;
   padding-top: 10px;
 }
-.sidenav a, .dropdown-btn {
+.sidenav button, .dropdown-btn {
   padding: 6px 8px 6px 10px;
   text-decoration: none;
   font-size: 16px;
@@ -36,7 +36,7 @@ head {font-family: noto sans mono;}
   cursor: pointer;
   outline: none;
 }
-.sidenav a:hover, .dropdown-btn:hover {
+.sidenav button:hover, .dropdown-btn:hover {
   color: red;
   background-color: #000000;
 }
@@ -68,24 +68,24 @@ head {font-family: noto sans mono;}
 
 <body>
   <div class="sidenav">
-    <a href="#">Home</a>
-  <a href="#">Projects</a>
+    <button href="#">Home</button>
+  <button href="#">Projects</button>
   <button class="dropdown-btn">Blog 
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a onclick="pg(https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/sidenav-tabs.html)">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <button onclick="pg(https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/sidenav-tabs.html)">Link 1</button>
+    <button href="#">Link 2</button>
+    <button href="#">Link 3</button>
   </div>
-  <a href="#">Legal</a>
+  <button href="#">Legal</button>
   </div>
   
 <div id="main" class="main"></div>
 
 <script>
 function pg(url){
-   fetch(url).then((result) => { return result.text(); }).then((content) => { alert(content); });
+   fetch(url).then((result) => { return result.text(); }).then((content) => { document.getElementById("main").innerHTML = content; });
 }
  
 var dropdown = document.getElementsByClassName("dropdown-btn");
