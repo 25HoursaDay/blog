@@ -52,7 +52,7 @@ head {font-family: noto sans mono;}
 .dropdown-container {
   display: none;
   font-size: 16px;
-  background-color: #000000;
+  background-color: #111;
   padding-left: 30px;
 }
 .fa-caret-down {
@@ -85,7 +85,7 @@ head {font-family: noto sans mono;}
 
 <script>
 function pg(url){
-   fetch(url).then((result) => { return result.text(); }).then((content) => { document.getElementById("main").append(content); });
+   fetch(url).then((result) => { return result.text(); }).then((content) => { document.getElementById("main").write(content); });
 }
  
 var dropdown = document.getElementsByClassName("dropdown-btn");
