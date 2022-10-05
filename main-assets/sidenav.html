@@ -68,26 +68,25 @@ head {font-family: noto sans mono;}
 
 <body>
   <div class="sidenav">
-    <button href="#">Home</button>
-  <button href="#">Projects</button>
+    <button onclick="pg()">Home</button>
+  <button onclick="pg()">Projects</button>
   <button class="dropdown-btn">Blog 
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <button onclick="pg(https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/sidenav-tabs.html)">Link 1</button>
-    <button href="#">Link 2</button>
-    <button href="#">Link 3</button>
+    <button onclick="pg()">Link 1</button>
+    <button onclick="pg()">Link 2</button>
+    <button onclick="pg()">Link 3</button>
   </div>
-  <button href="#">Legal</button>
+  <button onclick="pg('https://25hoursaday.github.io/blog/main-assets/sidenav-tabs.html')">Legal</button>
   </div>
   
-<div id="main" class="main"></div>
+<object id="main" class="main"></object>
 
 <script>
-function pg(url){
-   fetch(url).then((result) => { return result.text(); }).then((content) => { document.getElementById("main").write(content); });
+function pg(lnk) {
+ documnt.getElementById("main").data = lnk;
 }
- 
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 for (i = 0; i < dropdown.length; i++) {
