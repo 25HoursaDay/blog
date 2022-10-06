@@ -65,10 +65,10 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: scroll;}
 } 
   </style>
 </head>
-
 <body>
-  <div class="sidenav" src="https://25hoursaday.github.io/blog/main-assets/obj.html"></div>
-  
-  
+  <div class="sidenav" id="sidenav"></div>    
+  <script>  
+  fetch("https://25hoursaday.github.io/blog/main-assets/obj.html").then((result) => { return result.text(); }).then((content) => {document.getElementById("sidenav").innerHTML = content; });
+  </script>
 <object class="main" data="https://25hoursaday.github.io/blog/main-assets/sidenav-tabs.html"></object>
 </body>
