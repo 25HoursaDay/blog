@@ -1,64 +1,3 @@
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {font-family: noto sans mono; overflow-x: hidden; overflow-y: scroll;}
-.sidenav {
-  position: absolute;
-  height: 400px;
-  overflow-x: hidden;
-  border: 4px solid green;
-  width: 150px;
-  font-family: noto sans mono;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  position: absolute;
-  padding-top: 10px;
-}
-.sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 10px;
-  text-decoration: none;
-  font-size: 16px;
-  color: green;
-  font-family: noto sans mono;
-  background-color: #000000;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-}
-.sidenav a:hover, .dropdown-btn:hover {
-  color: red;
-  background-color: #000000;
-}
-.active {
-  background-color: #000000;
-  color: green;
-}
-.dropdown-container {
-  display: none;
-  font-size: 16px;
-  background-color: #111;
-  padding-left: 30px;
-}
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 16px;}
-} 
-  </style>
-</head>
-
-<body>
-  <div class="sidenav">
     <a>Home</a>
   <a>Projects</a>
   <button class="dropdown-btn">Blog <i class="fa fa-caret-down"></i></button>
@@ -68,8 +7,6 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: scroll;}
     <a>Link 3</a>
   </div>
   <a>Legal</a>
-  </div>
-
 
 <script>
 var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -86,4 +23,3 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 </script>
-</body>
