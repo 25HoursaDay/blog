@@ -66,11 +66,12 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: scroll;}
   </style>
 </head>
 <body>
-  <div class="sidenav" id="sidenav"></div>    
-  <script>  
-  fetch("https://25hoursaday.github.io/blog/main-assets/obj.html").then((result) => { return result.text(); }).then((content) => {document.getElementById("sidenav").innerHTML = content; });
-    
-var dropdown = document.getElementsByClassName("dropdown-btn");
+  <script>
+    fetch("https://25hoursaday.github.io/blog/main-assets/obj.html").then((result) => { return result.text(); }).then((content) => {document.getElementById("sidenav").innerHTML = content; });
+  </script>
+  <div class="sidenav" id="sidenav">
+<script> 
+  var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 for (i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener("click", function() {
@@ -83,6 +84,7 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
-  </script>
+    </script>
+  </div>    
 <object class="main" data="https://25hoursaday.github.io/blog/main-assets/sidenav-tabs.html"></object>
 </body>
