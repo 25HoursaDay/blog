@@ -24,13 +24,14 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
 .sidenav a, .dropdown-btn {
   padding: 10px 0px 10px 8px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 16px; 
   color: green;
   font-family: noto sans mono;
   background-color: #000000;
   display: block;
   border: none;
   background: none;
+  box-sizing: border-box;
   width: 100%;
   text-align: left;
   cursor: pointer;
@@ -59,8 +60,11 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
   display: none;
   font-size: 16px;
   background-color: #111111;
-  padding-left: 30px;
 }
+.dropdown-container a{
+  text-align: right;
+  padding-right: 30px;
+  }
 .fa-caret-down {
   float: right;
   padding-right: 8px;
