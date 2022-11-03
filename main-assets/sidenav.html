@@ -74,8 +74,8 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
 </head>
 <body>
     <div class="sidenav">
-    <a onclick="reset()" class="top">Home</a>
-  <a>Projects</a>
+    <a onclick="reset0()" class="top">Home</a>
+  <a onclick="reset1()">Projects</a>
   <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
   <div class="dropdown-container">
     <a onclick='changeTheme("blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Link 1</a>
@@ -85,17 +85,17 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
   <a>Legal</a>
   </div>
   <script> 
-    function changeTheme(bc, tc, thc, bgc, bghc, ddbgc) {
+    function changeTheme(bc, tc, thc, bgc, bghc, ddbgc) { 
+     localStorage.removeItem("themeinfo");
      document.body.style.setProperty('--border-color-theme', bc);
      document.body.style.setProperty('--text-color-theme', tc);
      document.body.style.setProperty('--text-hover-color-theme', thc);
      document.body.style.setProperty('--bg-color-theme', bgc);
      document.body.style.setProperty('--bg-hover-color-theme', bghc); 
      document.body.style.setProperty('--dropdown-bg-color-theme', ddbgc);  
-     localStorage.removeItem("themeinfo");
-     localStorage.setItem("themeinfo", '"'+ bc +'","'+ tc +'","'+ thc +'","'+ bgc +'","'+ bghc +'","'+ ddbgc + '"'); 
-     alert(localStorage.getItem("themeinfo"));
-    }  
+     let infoVar = '"'+ bc +'","'+ tc +'","'+ thc +'","'+ bgc +'","'+ bghc +'","'+ ddbgc + '"';
+     localStorage.setItem("themeinfo", bc +','+ tc +','+ thc +','+ bgc +','+ bghc +','+ ddbgc + ','); 
+     } 
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 for (i = 0; i < dropdown.length; i++) {
@@ -111,13 +111,11 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
-    
-    const themeinfoGet = localStorage.getItem("themeinfo");
-    let themeinfoReset = localStorage.setItem("themeinfo" , );
-    function reset() {
-    alert(themeinfoGet);
-    } 
-    
+    function reset0() {alert(localStorage.getItem("themeinfo"));}
+    function reset1() {localStorage.removeItem("themeinfo");}
+     
+      if (localStorage.getItem("themeinfo")) {const themeArray = localStorage.getItem("themeinfo").split(","); 
+      changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4], themeArray[5]);}
     
 </script>
 <div class="main">
