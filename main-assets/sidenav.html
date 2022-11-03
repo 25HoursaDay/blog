@@ -74,8 +74,11 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
 </head>
 <body>
   <script>
-    if (localStorage.getItem("themeinfo")) {alert(localStorage.getItem("themeinfo")); 
-    } else {localStorage.setItem("themeinfo", '"green", "green", "red", "#111111", "black", "#0c0c0c"');}
+    setInterval("check", 1000);
+    function check() {
+    if (localStorage.getItem("themeinfo") == true) {changeTheme(localStorage.getItem("themeinfo")); } 
+    else {localStorage.setItem("themeinfo", '"green", "green", "red", "#111111", "black", "#0c0c0c"');}
+    }
     
   </script>  
     <div class="sidenav">
