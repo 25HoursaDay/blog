@@ -69,9 +69,10 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
   padding-left: 30px;
   width: 100%;
   }
-.fa-caret-down {
+.fa-caret-right {
   float: right;
   padding-right: 4px;
+  
 }
   </style>
 </head>
@@ -79,7 +80,7 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
   <div class="sidenav">
     <a class="top">Home</a>
   <a>Projects</a>
-  <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-down"></i></button>
+  <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
   <div class="dropdown-container">
     <a>Link 1</a>
     <a>Link 2</a>
@@ -96,8 +97,10 @@ for (i = 0; i < dropdown.length; i++) {
     var dropdownContent = this.nextElementSibling;
     if (dropdownContent.style.display === "block") {
       dropdownContent.style.display = "none";
+      document.getElementById("crt").style.transform = "rotate(0deg)";
     } else {
-      dropdownContent.style.display = "block";
+      dropdownContent.style.display = "block"; 
+      document.getElementById("crt").style.transform = "rotate(90deg)";
     }
   });
 }
