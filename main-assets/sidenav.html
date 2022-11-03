@@ -78,7 +78,7 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
   <a>Projects</a>
   <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
   <div class="dropdown-container">
-    <a onclick="bluetheme()">Link 1</a>
+    <a onclick='changeTheme("blue", "blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Link 1</a>
     <a onclick="redtheme()">Link 2</a>
     <a onclick="whitetheme()">Link 3</a>
   </div>
@@ -93,17 +93,21 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
     //  document.body.style.setProperty('--border-color-theme', "blue");
     //  document.body.style.setProperty('--text-color-theme', "blue");
     //  }
-    
-    
-    function bluetheme() {
-     document.body.style.setProperty('--border-color-theme', "blue");
-     document.body.style.setProperty('--text-color-theme', "blue");
-     document.body.style.setProperty('--text-hover-color-theme', "white");
+    function changeTheme(n, bc, tc, thc, bgc, bghc, ddbgc) {
+     document.body.style.setProperty('--border-color-theme', bc);
+     document.body.style.setProperty('--text-color-theme', tc);
+     document.body.style.setProperty('--text-hover-color-theme', thc);
+     document.body.style.setProperty('--bg-color-theme', bgc);
+     document.body.style.setProperty('--bg-hover-color-theme', bghc);
+     document.body.style.setProperty('--dropdown-bg-color-theme', ddbgc);                              
+     localStorage.setItem("theme", n);
     }
+    
     function redtheme() {
      document.body.style.setProperty('--border-color-theme', "red");
      document.body.style.setProperty('--text-color-theme', "red");
      document.body.style.setProperty('--text-hover-color-theme', "tomato");
+     localStorage.setItem(theme, value);
     }
     function whitetheme() {
      document.body.style.setProperty('--border-color-theme', "white");
