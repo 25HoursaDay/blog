@@ -1,0 +1,43 @@
+  <div class="sidenav">
+    <a class="top">Home</a>
+  <a>Projects</a>
+  <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
+  <div class="dropdown-container">
+    <a onclick="bubba()">Link 1</a>
+    <a>Link 2</a>
+    <a>Link 3</a>
+  </div>
+  <a>Legal</a>
+  </div>
+  <script>
+
+
+    // to change style, try doing something like this: document.body.style.setProperty('--border-color-theme', "blue"); 
+    // Eg.
+    //  function bubba() {
+    //  document.body.style.setProperty('--border-color-theme', "blue");
+    //  document.body.style.setProperty('--text-color-theme', "blue");
+    //  }
+    
+    
+    function bubba() {
+     document.body.style.setProperty('--border-color-theme', "blue");
+     document.body.style.setProperty('--text-color-theme', "blue");
+    }
+      
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+      document.getElementById("crt").style.transform = "rotate(0deg)";
+    } else {
+      dropdownContent.style.display = "block"; 
+      document.getElementById("crt").style.transform = "rotate(90deg)";
+    }
+  });
+}
+</script>
