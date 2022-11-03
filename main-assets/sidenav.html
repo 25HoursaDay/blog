@@ -73,48 +73,32 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
   </style>
 </head>
 <body>
+  <script>
+    if (localStorage.getItem("themeinfo")) {alert(localStorage.getItem("themeinfo")); 
+    } else {localStorage.setItem("themeinfo", '"green", "green", "red", "#111111", "black", "#0c0c0c"');}
+    
+  </script>  
     <div class="sidenav">
     <a class="top">Home</a>
   <a>Projects</a>
   <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
   <div class="dropdown-container">
-    <a onclick='changeTheme("blue", "blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Link 1</a>
-    <a onclick="redtheme()">Link 2</a>
-    <a onclick="whitetheme()">Link 3</a>
+    <a onclick='changeTheme("blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Link 1</a>
+    <a onclick='changeTheme("red","red","tomato","#111111","black", "#0c0c0c")'>Link 2</a>
+    <a onclick='changeTheme("white","white","grey","#111111","black","#0c0c0c")'>Link 3</a>
   </div>
   <a>Legal</a>
   </div>
-  <script>
-
-
-    // to change style, try doing something like this: document.body.style.setProperty('--border-color-theme', "blue"); 
-    // Eg.
-    //  function bluetheme() {
-    //  document.body.style.setProperty('--border-color-theme', "blue");
-    //  document.body.style.setProperty('--text-color-theme', "blue");
-    //  }
-    function changeTheme(n, bc, tc, thc, bgc, bghc, ddbgc) {
+  <script> 
+    function changeTheme(bc, tc, thc, bgc, bghc, ddbgc) {
      document.body.style.setProperty('--border-color-theme', bc);
      document.body.style.setProperty('--text-color-theme', tc);
      document.body.style.setProperty('--text-hover-color-theme', thc);
      document.body.style.setProperty('--bg-color-theme', bgc);
-     document.body.style.setProperty('--bg-hover-color-theme', bghc);
+     document.body.style.setProperty('--bg-hover-color-theme', bghc); 
      document.body.style.setProperty('--dropdown-bg-color-theme', ddbgc);                              
-     localStorage.setItem("theme", n);
-    }
-    
-    function redtheme() {
-     document.body.style.setProperty('--border-color-theme', "red");
-     document.body.style.setProperty('--text-color-theme', "red");
-     document.body.style.setProperty('--text-hover-color-theme', "tomato");
-     localStorage.setItem(theme, value);
-    }
-    function whitetheme() {
-     document.body.style.setProperty('--border-color-theme', "white");
-     document.body.style.setProperty('--text-color-theme', "white");
-     document.body.style.setProperty('--text-hover-color-theme', "grey");
-    }
-      
+     localStorage.setItem("themeinfo", '"'+ bc +'","'+ tc +'","'+ thc +'","'+ bgc +'","'+ bghc +'","'+ ddbgc + '"'); 
+    }  
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 for (i = 0; i < dropdown.length; i++) {
