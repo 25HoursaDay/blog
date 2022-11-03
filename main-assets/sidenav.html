@@ -78,7 +78,7 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
   <a>Projects</a>
   <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
   <div class="dropdown-container">
-    <a onclick="bubba()">Link 1</a>
+    <a onclick="bluetheme()">Link 1</a>
     <a>Link 2</a>
     <a>Link 3</a>
   </div>
@@ -89,15 +89,16 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
 
     // to change style, try doing something like this: document.body.style.setProperty('--border-color-theme', "blue"); 
     // Eg.
-    //  function bubba() {
+    //  function bluetheme() {
     //  document.body.style.setProperty('--border-color-theme', "blue");
     //  document.body.style.setProperty('--text-color-theme', "blue");
     //  }
     
     
-    function bubba() {
+    function bluetheme() {
      document.body.style.setProperty('--border-color-theme', "blue");
      document.body.style.setProperty('--text-color-theme', "blue");
+     document.body.style.setProperty('--text-hover-color-theme', "white");
     }
       
 var dropdown = document.getElementsByClassName("dropdown-btn");
