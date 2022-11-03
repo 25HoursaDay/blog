@@ -79,8 +79,8 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
   <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
   <div class="dropdown-container">
     <a onclick="bluetheme()">Link 1</a>
-    <a>Link 2</a>
-    <a>Link 3</a>
+    <a onclick="redtheme()">Link 2</a>
+    <a onclick="whitetheme()">Link 3</a>
   </div>
   <a>Legal</a>
   </div>
@@ -99,6 +99,16 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
      document.body.style.setProperty('--border-color-theme', "blue");
      document.body.style.setProperty('--text-color-theme', "blue");
      document.body.style.setProperty('--text-hover-color-theme', "white");
+    }
+    function redtheme() {
+     document.body.style.setProperty('--border-color-theme', "red");
+     document.body.style.setProperty('--text-color-theme', "red");
+     document.body.style.setProperty('--text-hover-color-theme', "tomato");
+    }
+    function whitetheme() {
+     document.body.style.setProperty('--border-color-theme', "white");
+     document.body.style.setProperty('--text-color-theme', "white");
+     document.body.style.setProperty('--text-hover-color-theme', "grey");
     }
       
 var dropdown = document.getElementsByClassName("dropdown-btn");
