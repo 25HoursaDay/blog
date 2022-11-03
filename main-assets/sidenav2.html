@@ -1,0 +1,16 @@
+<script>
+  // header code with css in it.
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/h.html")
+  .then((result) => { return result.text(); })
+  .then((content) => { document.write(`<head>` + " " + content + " " + `</head>`); });
+  
+  // first part of body, with the sidenav in it.
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/b1.html")
+  .then((result) => { return result.text(); })
+  .then((content) => { document.write(document.innerHTML + `<body>` + " " + content); });
+  
+  // second part of body, with the article in it.
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/main-assets/sidenav-tabs.html")
+  .then((result) => { return result.text(); })
+  .then((content) => { document.write(document.innerHTML + " " + content + " " + `</body>`); }); 
+</script> 
