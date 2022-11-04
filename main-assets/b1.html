@@ -1,13 +1,20 @@
-    <div class="sidenav">
+   <div class="sidenav">
     <a onclick="reset0()" class="top">Home</a>
   <a onclick="reset1()">Projects</a>
+      
   <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
   <div class="dropdown-container">
-    <a onclick='changeTheme("blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Link 1</a>
-    <a onclick='changeTheme("red","red","tomato","#111111","black", "#0c0c0c")'>Link 2</a>
-    <a onclick='changeTheme("white","white","grey","#111111","black","#0c0c0c")'>Link 3</a>
+    <a>Link 1</a>
+    <a>Link 2</a>
+    <a>Link 3</a>
   </div>
-  <a>Legal</a>
+      
+    <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
+  <div class="dropdown-container">
+    <a onclick='changeTheme("blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Blue Theme</a>
+    <a onclick='changeTheme("red","red","tomato","#111111","black", "#0c0c0c")'>Red Theme</a>
+    <a onclick='changeTheme("white","white","grey","#111111","black","#0c0c0c")'>White Theme</a>
+  </div>
   </div>
   <script> 
     function changeTheme(bc, tc, thc, bgc, bghc, ddbgc) { 
@@ -28,10 +35,8 @@ for (i = 0; i < dropdown.length; i++) {
     var dropdownContent = this.nextElementSibling;
     if (dropdownContent.style.display === "block") {
       dropdownContent.style.display = "none";
-      document.getElementById("crt").style.transform = "rotate(0deg)";
     } else {
       dropdownContent.style.display = "block"; 
-      document.getElementById("crt").style.transform = "rotate(90deg)";
     }
   });
 } 
