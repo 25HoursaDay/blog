@@ -110,21 +110,13 @@ var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 for (i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block"; 
-    }
-  });
-}
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {dropdownContent.style.display = "none";} else {dropdownContent.style.display = "block";}  }); }
     function reset0() {alert(localStorage.getItem("themeinfo"));} 
     function reset1() {localStorage.removeItem("themeinfo");}
-     
-      if (localStorage.getItem("themeinfo")) {const themeArray = localStorage.getItem("themeinfo").split(","); 
-      changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4], themeArray[5]);}
-    
+    if (localStorage.getItem("themeinfo")) {const themeArray = localStorage.getItem("themeinfo").split(","); 
+    changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4], themeArray[5]);}
 </script>
 <div class="main">
 <h2>Lorem Ipsum </h2>
