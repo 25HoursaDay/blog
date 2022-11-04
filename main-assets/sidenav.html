@@ -3,15 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-  body {
-    --border-color-theme: green;
-    --bg-color-theme: #111111;
-    --bg-hover-color-theme: #000000;
-    --text-color-theme: green;
-    --text-hover-color-theme: red;
-    --dropdown-bg-color-theme: #0c0c0c;
-  }
-body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; background-color: var(--bg-color-theme, #111111);}
+body {
+  --border-color-theme: green;
+  --bg-color-theme: #111111;
+  --bg-hover-color-theme: #000000;
+  --text-color-theme: green;
+  --text-hover-color-theme: red;
+  --dropdown-bg-color-theme: #0c0c0c;
+  font-family: noto sans mono;
+  overflow-x: hidden; overflow-y: auto;
+  background-color: var(--bg-color-theme, #111111);}
 .sidenav {
   position: absolute;
   height: calc(100% - 8px); width: 13%;
@@ -86,12 +87,12 @@ body {font-family: noto sans mono; overflow-x: hidden; overflow-y: auto; backgro
     <a>Link 2</a>
     <a>Link 3</a>
   </div>
-      
     <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
   <div class="dropdown-container">
     <a onclick='changeTheme("blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Blue Theme</a>
     <a onclick='changeTheme("red","red","tomato","#111111","black", "#0c0c0c")'>Red Theme</a>
     <a onclick='changeTheme("white","white","grey","#111111","black","#0c0c0c")'>White Theme</a>
+    <a onclick='changeTheme("green","green","red","#111111","black","#0c0c0c")'>Hacker Theme</a>
   </div>
   </div>
   <script> 
@@ -117,7 +118,7 @@ for (i = 0; i < dropdown.length; i++) {
       dropdownContent.style.display = "block"; 
     }
   });
-} 
+}
     function reset0() {alert(localStorage.getItem("themeinfo"));} 
     function reset1() {localStorage.removeItem("themeinfo");}
      
