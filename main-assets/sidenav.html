@@ -78,25 +78,24 @@ body {
 </head>
 <body>
   <div class="sidenav">
-  <a onclick="reset0()" class="top">Home</a>
-  <a onclick="reset1()">Projects</a>
+    <a onclick="reset0()" class="top">Home</a>
+    <a onclick="reset1()">Projects</a>
  
-  <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
-  <div class="dropdown-container">
-  <a>Link 1</a>
-  <a>Link 2</a>
-  <a>Link 3</a>
+    <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
+    <div class="dropdown-container">
+      <a>Link 1</a>
+      <a>Link 2</a>
+      <a>Link 3</a>
+    </div>
+    <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
+    <div class="dropdown-container">
+      <a onclick='changeTheme("blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Blue Theme</a>
+      <a onclick='changeTheme("red","red","tomato","#111111","black", "#0c0c0c")'>Red Theme</a>
+      <a onclick='changeTheme("white","white","grey","#111111","black","#0c0c0c")'>White Theme</a>
+      <a onclick='changeTheme("green","green","red","#111111","black","#0c0c0c")'>Hacker Theme</a>
+    </div>
   </div>
-      
-  <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
-  <div class="dropdown-container">
-  <a onclick='changeTheme("blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Blue Theme</a>
-  <a onclick='changeTheme("red","red","tomato","#111111","black", "#0c0c0c")'>Red Theme</a>
-  <a onclick='changeTheme("white","white","grey","#111111","black","#0c0c0c")'>White Theme</a>
-  <a onclick='changeTheme("green","green","red","#111111","black","#0c0c0c")'>Hacker Theme</a>
-  </div>
-      
-  </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script> 
     function changeTheme(bc, tc, thc, bgc, bghc, ddbgc) { 
      localStorage.removeItem("themeinfo");
@@ -108,17 +107,14 @@ body {
      document.body.style.setProperty('--dropdown-bg-color-theme', ddbgc);  
      localStorage.setItem("themeinfo", bc +','+ tc +','+ thc +','+ bgc +','+ bghc +','+ ddbgc + ','); 
      } 
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var dropdownContent = this.nextElementSibling;
-      if (dropdownContent.style.display === "block") {dropdownContent.style.display = "none";} else {dropdownContent.style.display = "block";}  }); }
-    function reset0() {alert(localStorage.getItem("themeinfo"));} 
-    function reset1() {localStorage.removeItem("themeinfo");}
     if (localStorage.getItem("themeinfo")) {const themeArray = localStorage.getItem("themeinfo").split(","); 
     changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4], themeArray[5]);}
+    $(function() {
+    $(".dropdown-btn").click(function() {
+      this.classList.toggle("active");
+        $(this.nextElementSibling).slideToggle("slow");
+    });
+}); 
 </script>
 <div class="main">
 <h2>Lorem Ipsum </h2>
