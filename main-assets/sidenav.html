@@ -109,10 +109,11 @@ body {
      } 
     if (localStorage.getItem("themeinfo")) {const themeArray = localStorage.getItem("themeinfo").split(","); 
     changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4], themeArray[5]);}
+    
     $(function() {
     $(".dropdown-btn").click(function() {
       this.classList.toggle("active");
-        $(this.nextElementSibling).slideToggle("slow");
+        $(this.nextElementSibling).slideToggle(100);
     });
 }); 
 </script>
