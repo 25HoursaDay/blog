@@ -83,7 +83,7 @@ body {
     <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
     <div class="dropdown-container">
       <a onclick="searchParams()">Search Params</a>
-      <a>Link 2</a>
+      <a onclick="bookmarklets()">Link 2</a>
       <a>Link 3</a>
     </div>
     <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
@@ -125,7 +125,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div> 
 <script> 
+  function home() {
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  }
+  function projects() {
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/projects/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  }
   function searchParams() {
-  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/search-parameters/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); }
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/search-parameters/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  }
+  function bookmarklets() {
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/bookmarklets/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  }
   </script>
 </body>
