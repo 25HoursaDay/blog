@@ -8,7 +8,9 @@
 	<p>Now we need to define what we are searching for in the query string. 
 	In this case we are searching for a value in the URL, so we need to use the location element with the search method to get the query string in the URL.</p> 
 	<img src="https://raw.githubusercontent.com/25HoursaDay/blog/main/search-parameters/UrlParams-StepTwo.png" alt="Step Two Example Code" width="537" height="39">
-	<p>And finally, we need a way to get the query string.
-	To get the query string, we need to make a new variable with the value set to the parameter variable with get get method, and define what part of the query to return.</p>
+	<p>And finally, we need a way to get the query string.</p>
+	<p>To get the query string, we need to make a new variable with the value set to the parameter variable with the string "get" method, and define what part of the query to set it to.</p>
 	<img src="https://raw.githubusercontent.com/25HoursaDay/blog/main/search-parameters/UrlParams-StepThree.png" alt="Step Three Example Code" width="537" height="58">
-	<p>This code would return "example" (the value of "value") if the url ends with "?value=example".</p>
+	<p>This code makes it so the "value" variable is set to the value after "?value=" in the url. </p>
+	<p>For example, if you put "?value=example" at the end of the url, the "value" variable would be set to "example".</p>
+	
