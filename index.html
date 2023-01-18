@@ -95,11 +95,11 @@ body {
 </head>
 <body>
   <div class="sidenav">
-    <a class="top">Home</a>
+    <a class="top" onclick='clickArticle("home")'>Home</a>
     <a onclick='clickArticle("projects")'>Projects</a>
     <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
     <div class="dropdown-container">
-      <a onclick='clickArticle("searchParams")'>Search Params</a>
+      <a onclick='clickArticle("search-parameters")'>Search Params</a>
       <a onclick='clickArticle("bookmarklets")'>Link 2</a>
       <a>Link 3</a>
     </div>
@@ -151,19 +151,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   
   function clickArticle(x) {
   document.location.search = "?article=" + x;
-  }
-  
-  function home() {
-  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
-  }
-  function projects() {
-  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/projects/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
-  }
-  function searchParams() {
-  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/search-parameters/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
-  }
-  function bookmarklets() {
-  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/bookmarklets/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
   }
   </script>
 </body>
