@@ -148,6 +148,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   }
   function clickArticle(x) {
   document.location.search = "?article=" + x;
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
   }
   </script>
 </body>
