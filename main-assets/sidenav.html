@@ -4,29 +4,28 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
-  --border-color-theme: green;
-  --bg-color-theme: #111111;
-  --bg-hover-color-theme: #000000;
-  --text-color-theme: green;
-  --text-hover-color-theme: red;
-  --dropdown-bg-color-theme: #0c0c0c;
+  --bctc: green;
+  --bgc: #111111;
+  --bghc: #000000;
+  --thc: red;
+  --dbgc: #0c0c0c;
   font-family: noto sans mono;
   overflow-x: hidden; overflow-y: auto;
-  background-color: var(--bg-color-theme, #111111);}
+  background-color: var(--bgc, #111111);}
 .sidenav {
   position: absolute;
   height: calc(100% - 8px); width: 13%;
   overflow-x: hidden; overflow-y: scroll;
-  border: 4px solid var(--border-color-theme, green);
+  border: 4px solid var(--bctc, green);
   font-family: noto sans mono; font-size: 16px;
   top: 0; left: 0;
-  background-color: var(--bg-color-theme, #111111);
+  background-color: var(--bgc, #111111);
 }
 .sidenav a, .dropdown-btn {
   padding: 7px 0px 7px 8px;
   text-decoration: none;
   font-size: 16px; 
-  color: var(--text-color-theme, green);
+  color: var(--bctc, green);
   font-family: noto sans mono;
   display: block;
   border: none;
@@ -37,44 +36,44 @@ body {
   z-index: 1;
 }
 .sidenav a:hover, .dropdown-btn:hover {
-  color: var(--text-hover-color-theme, red);
-  background-color: var(--bg-hover-color-theme, #000000);
+  color: var(--thc, red);
+  background-color: var(--bghc, #000000);
 }
 .top {margin-top: 10px;}
 .main {
   top: 0; left: calc(13% + 4px);
   font-size: 20px;  
   height: calc(100% - 8px); width: calc(87% - 32px);
-  background-color: var(--bg-color-theme, #111111);
-  border: 4px solid var(--border-color-theme, green);
+  background-color: var(--bgc, #111111);
+  border: 4px solid var(--bctc, green);
   position: absolute;
   overflow-y: scroll;
   font-family: noto sans mono;
-  color: var(--text-color-theme, green);
+  color: var(--bctc, green);
   padding: 0px 10px 0px 10px
 }
  .main a:link {
-  color: var(--text-hover-color-theme, red);
+  color: var(--thc, red);
   text-decoration: none;
   background-color: transparent;
   }
   .main a:visited {
-  color: var(--text-hover-color-theme, red);
+  color: var(--thc, red);
   background-color: transparent;
   text-decoration: none;
 }
   .main a:hover {
-  color: var(--text-hover-color-theme, red);
+  color: var(--thc, red);
   background-color: transparent; 
   text-decoration: underline;
 }
   .main a:active {
-  color: var(--text-hover-color-theme, red);
+  color: var(--thc, red);
   background-color: transparent;
   text-decoration: underline;
 }
 .active {
-  background-color: var(--bg-hover-color-theme, #000000);
+  background-color: var(--bghc, #000000);
 }
   .active i {
     transform: rotate(90deg);
@@ -82,7 +81,7 @@ body {
 .dropdown-container {
   display: none;
   font-size: 16px;
-  background-color: var(--dropdown-bg-color-theme, #0c0c0c);
+  background-color: var(--dbgc, #0c0c0c);
   width: 100%;
 }
 .dropdown-container a{
@@ -108,26 +107,25 @@ body {
     </div>
     <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
     <div class="dropdown-container">
-      <a onclick='changeTheme("blue", "blue", "white", "#111111", "black", "#0c0c0c")'>Blue Theme</a>
-      <a onclick='changeTheme("red","red","tomato","#111111","black", "#0c0c0c")'>Red Theme</a>
-      <a onclick='changeTheme("white","white","grey","#111111","black","#0c0c0c")'>White Theme</a>
-      <a onclick='changeTheme("green","green","red","#111111","black","#0c0c0c")'>Hacker Theme</a>
+      <a onclick='changeTheme("blue", "white", "#111111", "black", "#0c0c0c")'>Blue Theme</a>
+      <a onclick='changeTheme("red","tomato","#111111","black", "#0c0c0c")'>Red Theme</a>
+      <a onclick='changeTheme("white","grey","#111111","black","#0c0c0c")'>White Theme</a>
+      <a onclick='changeTheme("green","red","#111111","black","#0c0c0c")'>Hacker Theme</a>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script> 
-    function changeTheme(bc, tc, thc, bgc, bghc, ddbgc) { 
+    function changeTheme(bctc, thc, bgc, bghc, dbgc) { 
      localStorage.removeItem("themeinfo");
-     document.body.style.setProperty('--border-color-theme', bc);
-     document.body.style.setProperty('--text-color-theme', tc);
-     document.body.style.setProperty('--text-hover-color-theme', thc);
-     document.body.style.setProperty('--bg-color-theme', bgc);
-     document.body.style.setProperty('--bg-hover-color-theme', bghc); 
-     document.body.style.setProperty('--dropdown-bg-color-theme', ddbgc);  
-     localStorage.setItem("themeinfo", bc +','+ tc +','+ thc +','+ bgc +','+ bghc +','+ ddbgc + ','); 
+     document.body.style.setProperty('--bctc', bctc);
+     document.body.style.setProperty('--thc', thc);
+     document.body.style.setProperty('--bgc', bgc);
+     document.body.style.setProperty('--bghc', bghc); 
+     document.body.style.setProperty('--dbgc', dbgc);  
+     localStorage.setItem("themeinfo", bctc +','+ thc +','+ bgc +','+ bghc +','+ dbgc + ','); 
      } 
     if (localStorage.getItem("themeinfo")) {const themeArray = localStorage.getItem("themeinfo").split(","); 
-    changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4], themeArray[5]);}
+    changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4]);}
     
     $(function() {
     $(".dropdown-btn").click(function() {
