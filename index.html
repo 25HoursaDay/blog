@@ -1,0 +1,169 @@
+<head>
+<link id="favicon" rel="icon" type="image/x-icon" href="https://25hoursaday.github.io/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans Mono">
+<style>
+body {
+  --bctc: green;
+  --bgc: #111111;
+  --bghc: #000000;
+  --thc: red;
+  --dbgc: #0c0c0c;
+  overflow-x: hidden; overflow-y: auto;
+  background-color: var(--bgc, #111111);}
+.sidenav {
+  position: absolute;
+  height: calc(100% - 8px); width: 13%;
+  overflow-x: hidden; overflow-y: scroll;
+  border: 4px solid var(--bctc, green);
+  font-size: 16px;
+  top: 0; left: 0;
+  background-color: var(--bgc, #111111);
+}
+.sidenav a, .dropdown-btn {
+  padding: 7px 0px 7px 8px;
+  text-decoration: none;
+  font-size: 16px; 
+  color: var(--bctc, green);
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  z-index: 1;
+}
+.sidenav a:hover, .dropdown-btn:hover {
+  color: var(--thc, red);
+  background-color: var(--bghc, #000000);
+}
+.top {margin-top: 10px;}
+.main {
+  top: 0; left: calc(13% + 4px);
+  font-size: 20px;  
+  height: calc(100% - 8px); width: calc(87% - 32px);
+  background-color: var(--bgc, #111111);
+  border: 4px solid var(--bctc, green);
+  position: absolute;
+  overflow-y: scroll;
+  color: var(--bctc, green);
+  padding: 0px 10px 0px 10px
+}
+ .main a:link {
+  color: var(--thc, red);
+  text-decoration: none;
+  background-color: transparent;
+  }
+  .main a:visited {
+  color: var(--thc, red);
+  background-color: transparent;
+  text-decoration: none;
+}
+  .main a:hover {
+  color: var(--thc, red);
+  background-color: transparent; 
+  text-decoration: underline;
+}
+  .main a:active {
+  color: var(--thc, red);
+  background-color: transparent;
+  text-decoration: underline;
+}
+.active {
+  background-color: var(--bghc, #000000);
+}
+  .active i {
+    transform: rotate(90deg);
+  }
+.dropdown-container {
+  display: none;
+  font-size: 16px;
+  background-color: var(--dbgc, #0c0c0c);
+  width: 100%;
+}
+.dropdown-container a{
+  text-align: left;
+  padding-left: 30px;
+  width: 100%;
+}
+.fa-caret-right {
+  float: right;
+  margin-right: 15px;
+}
+</style>
+</head>
+<body>
+  <div class="sidenav">
+    <a class="top">Home</a>
+    <a onclick='clickArticle("projects")'>Projects</a>
+    <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
+    <div class="dropdown-container">
+      <a onclick='clickArticle("searchParams")'>Search Params</a>
+      <a onclick='clickArticle("bookmarklets")'>Link 2</a>
+      <a>Link 3</a>
+    </div>
+    <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
+    <div class="dropdown-container">
+      <a onclick='changeTheme("blue", "white", "#111111", "black", "#0c0c0c")'>Blue Theme</a>
+      <a onclick='changeTheme("red","tomato","#111111","black", "#0c0c0c")'>Red Theme</a>
+      <a onclick='changeTheme("white","grey","#111111","black","#0c0c0c")'>White Theme</a>
+      <a onclick='changeTheme("green","red","#111111","black","#0c0c0c")'>Hacker Theme</a>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script> 
+    function changeTheme(bctc, thc, bgc, bghc, dbgc) { 
+     localStorage.removeItem("themeinfo");
+     document.body.style.setProperty('--bctc', bctc);
+     document.body.style.setProperty('--thc', thc);
+     document.body.style.setProperty('--bgc', bgc);
+     document.body.style.setProperty('--bghc', bghc); 
+     document.body.style.setProperty('--dbgc', dbgc);  
+     localStorage.setItem("themeinfo", bctc +','+ thc +','+ bgc +','+ bghc +','+ dbgc + ','); 
+     } 
+    if (localStorage.getItem("themeinfo")) {const themeArray = localStorage.getItem("themeinfo").split(","); 
+    changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4]);}
+    
+    $(function() {
+    $(".dropdown-btn").click(function() {
+      this.classList.toggle("active");
+        $(this.nextElementSibling).slideToggle(100);
+    });
+}); 
+</script>
+<div class="main" id="main">
+  <h2>Lorem Ipsum </h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div> 
+<script>
+  let params = new URLSearchParams(document.location.search);
+  let article = params.get("article");
+  if (article) {
+ fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+article+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+    } else {
+    fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });
+    }
+  
+  function clickArticle(x) {
+  document.location.search = "?article=" + x;
+  }
+  
+  function home() {
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  }
+  function projects() {
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/projects/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  }
+  function searchParams() {
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/search-parameters/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  }
+  function bookmarklets() {
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/bookmarklets/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  }
+  </script>
+</body>
