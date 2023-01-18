@@ -145,6 +145,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   let article = params.get("article");
   if (article) {
  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+article+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+    } else {
+    fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });
     }
   
   function home() {
