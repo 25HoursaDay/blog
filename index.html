@@ -143,9 +143,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <script>
   let params = new URLSearchParams(document.location.search);
   let article = params.get("article");
-  if (document.location.search) {} else {
- fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+article+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
-  }
+  if (document.location.search) {
+    if (document.location.search == "?article=") {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });} else {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+article+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });}
+  } else {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });}
+  
   function clickArticle(x) {
   fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
   document.location.search = "?article=" + x;
