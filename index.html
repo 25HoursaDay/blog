@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Noto Sans Mono' rel='stylesheet'>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <style>
 ::-webkit-scrollbar {width: 4px;}
 ::-webkit-scrollbar-track {background: hidden;}
@@ -125,7 +126,7 @@ body {
     </div>
   </div>
   
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  
   <script> 
     function changeTheme(bctc, thc, bgc, bghc, dbgc) { 
      localStorage.removeItem("themeinfo");
@@ -172,6 +173,16 @@ body {
   let topElemChild = document.getElementById(elem).firstElementChild;
   let bottomElemChild = document.getElementById(elem).lastElementChild;
   while (bottomElemChild.childElementCount > 0) {bottomElemChild = bottomElemChild.lastElementChild;}
+  document.getElementById("sidenav").onscroll = function(){$(document.getElementById("sidenav").lastElementChild).css("height");
+  if (bottomElemChild.offsetHeight < bottomElemChild.style.height){alert(bottomElemChild.style.height);}
+                                                          };
   }
+$(document).ready(function(){
+  $("#sidenav").click(function(){
+    alert(document.getElementById("sidenav").lastElementChild.innerHTML + $(document.getElementById("sidenav").lastElementChild).css("height"));
+  });
+});
+  
+  function returnCSS(elem, value) {let a = document.querySelector(elem); let b = a+".style."+value;}
   </script>
 </body>
