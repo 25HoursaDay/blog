@@ -107,7 +107,7 @@ body {
 </head>
 <body>
   <button onclick="copyUrl()" id="share" class="share-btn">Share <i class="fa fa-link"></i></button>
-  <div class="sidenav">
+  <div id="sidenav" class="sidenav">
     <a onclick='clickArticle("home")'>Home</a>
     <a onclick='clickArticle("projects")'>Projects</a>
     <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
@@ -165,6 +165,6 @@ body {
   document.getElementById('share').innerHTML = "Link Copied!"; 
   setTimeout(() => {document.getElementById('share').innerHTML = `Share <i class="fa fa-link"></i>`}, 1000);
   }
-
+alert(document.getElementById("sidenav").lastElementChild.innerHTML);
   </script>
 </body>
