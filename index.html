@@ -4,10 +4,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Noto Sans Mono' rel='stylesheet'>
 <style>
-::-webkit-scrollbar {width: 0px;}
-::-webkit-scrollbar-track {background: none;}
-::-webkit-scrollbar-thumb {background: blue;}
-::-webkit-scrollbar-thumb:hover {background: none;}
+.sidenav::-webkit-scrollbar {width: 4px;}
+.sidenav::-webkit-scrollbar-track {background: none;}
+.sidenav::-webkit-scrollbar-thumb {background: var(--bctc, green);}
+.sidenav::-webkit-scrollbar-thumb:hover {background: var(--thc, red);}
 body {
   --bctc: green;
   --bgc: #111111;
@@ -20,7 +20,7 @@ body {
   }
 .sidenav {
   position: absolute;
-  height: calc(100% - 8px); width: 13%;
+  height: calc(100% - 8px); width: 11%;
   overflow-x: hidden; overflow-y: scroll;
   border: 4px solid var(--bctc, green);
   font-size: 16px;
@@ -38,18 +38,17 @@ body {
   width: 100%;
   text-align: left;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
   font-family: 'Noto Sans Mono';
 }
 .sidenav a:hover, .dropdown-btn:hover {
   color: var(--thc, red);
   background-color: var(--bghc, #000000);
 }
-
 .main {
-  top: 0; left: calc(13% + 4px);
+  top: 0; left: calc(11% + 4px);
   font-size: 20px;  
-  height: calc(100% - 8px); width: calc(87% - 32px);
+  height: calc(100% - 8px); width: calc(89% - 32px);
   background-color: var(--bgc, #111111);
   border: 4px solid var(--bctc, green);
   position: absolute;
@@ -79,7 +78,7 @@ body {
   .share-btn {
   position: absolute;
   text-decoration: none;
-  font-size: 16px; 
+  font-size: 15px; 
   color: var(--bctc, green);
   display: block;
   border: 4px solid var(--bctc, green);
@@ -87,9 +86,9 @@ body {
   text-align: middle;
   cursor: pointer;
   z-index: 3;
-  right: 9px; top: 9px;
+  right: 9px; bottom: 9px;
   font-family: 'Noto Sans Mono';
-  height: 32px; width: 100px;
+  height: 32px; width: auto;
 }
 .share-btn:hover {
   color: var(--thc, red);
@@ -103,7 +102,7 @@ body {
 </style>
 </head>
 <body>
-  <button onclick="k()" id="share" class="share-btn">Share <i class="fa fa-link"></i></button>
+  <button onclick="copyUrl()" id="share" class="share-btn">Share <i class="fa fa-link"></i></button>
   <div class="sidenav">
     <a onclick='clickArticle("home")'>Home</a>
     <a onclick='clickArticle("projects")'>Projects</a>
@@ -157,10 +156,10 @@ body {
   fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => {            document.getElementById("main").innerHTML = content; }); 
   document.location.search = "?article=" + x;
   }
-  function k(){
+  function copyUrl() {
   navigator.clipboard.writeText(window.location); 
-  document.getElementByID("share").innerHTML = "Link Copied!";
-  setTimeout(() => {console.log("this is the second message")}, 3000);  
+  document.getElementById('share').innerHTML = "Link Copied!"; 
+  setTimeout(() => {document.getElementById('share').innerHTML = `Share <i class="fa fa-link"></i>`}, 1000);
   }
   
 
