@@ -168,15 +168,10 @@ body {
   let firstSidenavChild = document.getElementById("sidenav").firstElementChild;
   let lastSidenavChild = document.getElementById("sidenav").lastElementChild;
   
-  function elemTB(tb, elem) {
-  if (tb == 1) {let topElemChild = document.getElementById(elem).firstElementChild;
-                
-               }
-  else { 
-  if (tb == 2) {let bottomElemChild = document.getElementById(elem).lastElementChild;
+  function elemTB(elem) {
+  let topElemChild = document.getElementById(elem).firstElementChild;
+  let bottomElemChild = document.getElementById(elem).lastElementChild;
   while (bottomElemChild.childElementCount > 0) {bottomElemChild = bottomElemChild.lastElementChild;}
-               }
-       }
   }
   </script>
 </body>
