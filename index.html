@@ -165,6 +165,9 @@ body {
   document.getElementById('share').innerHTML = "Link Copied!"; 
   setTimeout(() => {document.getElementById('share').innerHTML = `Share <i class="fa fa-link"></i>`}, 1000);
   }
-alert(document.getElementById("sidenav").lastElementChild.innerHTML);
+  let lastSidenavChild = document.getElementById("sidenav").lastElementChild;
+  while (sidenavChildren.childElementCount > 0) {
+    lastSidenavChild = lastSidenavChild.lastElementChild;
+  }
   </script>
 </body>
