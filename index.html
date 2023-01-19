@@ -4,7 +4,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Noto Sans Mono' rel='stylesheet'>
 <style>
-.sidenav::-webkit-scrollbar {width: 4px;}
+::-webkit-scrollbar {width: 4px;}
+::-webkit-scrollbar-track {background: hidden;}
+::-webkit-scrollbar-thumb {background: var(--bctc, green); background-clip: content-box;;}
+::-webkit-scrollbar-thumb:hover {background: var(--thc, red);}
+.sidenav::-webkit-scrollbar {width: 0px;}
 .sidenav::-webkit-scrollbar-track {background: none;}
 .sidenav::-webkit-scrollbar-thumb {background: var(--bctc, green);}
 .sidenav::-webkit-scrollbar-thumb:hover {background: var(--thc, red);}
@@ -161,7 +165,6 @@ body {
   document.getElementById('share').innerHTML = "Link Copied!"; 
   setTimeout(() => {document.getElementById('share').innerHTML = `Share <i class="fa fa-link"></i>`}, 1000);
   }
-  
 
   </script>
 </body>
