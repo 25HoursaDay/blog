@@ -165,9 +165,16 @@ body {
   document.getElementById('share').innerHTML = "Link Copied!"; 
   setTimeout(() => {document.getElementById('share').innerHTML = `Share <i class="fa fa-link"></i>`}, 1000);
   }
-  let lastSidenavChild = document.getElementById("sidenav").lastElementChild;
-  while (sidenavChildren.childElementCount > 0) {
-    lastSidenavChild = lastSidenavChild.lastElementChild;
+  
+  function sidenavFL(FL) {
+  if (FL == 1) { let firstSidenavChild = document.getElementById("sidenav").firstElementChild;
+               
+               }
+  else { 
+  if (FL == 2) {let lastSidenavChild = document.getElementById("sidenav").lastElementChild;
+  while (sidenavChildren.childElementCount > 0) {lastSidenavChild = lastSidenavChild.lastElementChild;}
+               }
+       }
   }
   </script>
 </body>
