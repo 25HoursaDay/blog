@@ -167,13 +167,14 @@ body {
   }
   let firstSidenavChild = document.getElementById("sidenav").firstElementChild;
   let lastSidenavChild = document.getElementById("sidenav").lastElementChild;
-  function sidenavFL(FL) {
-  if (FL == 1) { 
-  while (sidenavChildren.childElementCount > 0) {firstSidenavChild = firstSidenavChild.firstElementChild;}
+  
+  function sidenavFL(fl, elem) {
+  if (fl == 1) {let topElemChild = document.getElementById(elem).firstElementChild;
+                
                }
   else { 
-  if (FL == 2) {
-  while (sidenavChildren.childElementCount > 0) {lastSidenavChild = lastSidenavChild.lastElementChild;}
+  if (fl == 2) {let bottomElemChild = document.getElementById(elem).lastElementChild;
+  while (bottomElemChild.childElementCount > 0) {bottomElemChild = bottomElemChild.lastElementChild;}
                }
        }
   }
