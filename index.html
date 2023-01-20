@@ -130,7 +130,7 @@ body {
       
       <button class="dropdown-btn">Rants<i id="crt" class="fa fa-caret-right"></i></button>
       <div class="dropdown-container">
-        <a onclick='clickArticle("water")'>Is water wet?</a>
+        <a onclick='clickArticle("water-wet")'>Is water wet?</a>
         <a onclick='clickArticle("")'>Link 2</a>
         <a onclick='clickArticle("")'>Link 3</a>
       </div>
@@ -177,7 +177,8 @@ body {
   } else {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });}
   
   function clickArticle(x) {
-  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => {
+  document.getElementById("main").innerHTML = content; }); 
   document.location.search = "?blogpage=" + x;
   }
   function copyUrl() {
