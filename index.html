@@ -124,9 +124,8 @@ body {
       <a onclick='changeTheme("white","grey","#111111","black","#0c0c0c")'>White Theme</a>
       <a onclick='changeTheme("green","red","#111111","black","#0c0c0c")'>Green Theme</a>
     </div>
+    <br>
   </div>
-  
-  
   <script> 
     function changeTheme(bctc, thc, bgc, bghc, dbgc) { 
      localStorage.removeItem("themeinfo");
@@ -158,24 +157,18 @@ body {
   } else {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });}
   
   function clickArticle(x) {
-  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => {            document.getElementById("main").innerHTML = content; }); 
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => {           document.getElementById("main").innerHTML = content; }); 
   document.location.search = "?article=" + x;
   }
   function copyUrl() {
   navigator.clipboard.writeText(window.location); 
   document.getElementById('share').innerHTML = "Link Copied!"; 
   setTimeout(() => {document.getElementById('share').innerHTML = `Share <i class="fa fa-link"></i>`}, 1000);
-  
   }
-  let firstSidenavChild = document.getElementById("sidenav").firstElementChild;
-  let lastSidenavChild = document.getElementById("sidenav").lastElementChild;
-  
   function elemTB(elem) {
   let topElemChild = document.getElementById(elem).firstElementChild;
   let bottomElemChild = document.getElementById(elem).lastElementChild;
-    
   while (bottomElemChild.childElementCount > 0) {bottomElemChild = bottomElemChild.lastElementChild;}
-  alert($(document.getElementById("sidenav").lastElementChild).css("height"));
-                                                          }
+  }
   </script>
 </body>
