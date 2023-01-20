@@ -74,11 +74,17 @@ body {
   background-color: var(--dbgc, #0c0c0c);
   width: 100%;
 }
-.dropdown-container a{
+.dropdown-container a {
   text-align: left;
   padding-left: 1.5vw;
   width: 100%;
   font-size: 15px;
+}
+  .dropdown-container button{
+  text-align: left;
+  padding-left: 1.5vw;
+  width: 100%;
+  font-size: 16px;
 }
   .share-btn {
   position: absolute;
@@ -114,16 +120,23 @@ body {
     <a onclick='clickArticle("projects")'>Projects</a>
     <button class="dropdown-btn">Blog Pages<i id="crt" class="fa fa-caret-right"></i></button>
     <div class="dropdown-container">
+      
+      <button class="dropdown-btn">Articles<i id="crt" class="fa fa-caret-right"></i></button>
+      <div class="dropdown-container">
       <a onclick='clickArticle("search-parameters")'>Search Params</a>
       <a onclick='clickArticle("bookmarklets")'>Bookmarklets</a>
       <a onclick='clickArticle("")'>Link 3</a>
+      </div>
+      
+      <button class="dropdown-btn">Rants<i id="crt" class="fa fa-caret-right"></i></button>
+      <div class="dropdown-container">
+        <a onclick='clickArticle("water")'>Is water wet?</a>
+        <a onclick='clickArticle("")'>Link 2</a>
+        <a onclick='clickArticle("")'>Link 3</a>
+      </div>
+
     </div>
-    <button class="dropdown-btn">Rants<i id="crt" class="fa fa-caret-right"></i></button>
-    <div class="dropdown-container">
-      <a onclick='clickArticle("water")'>Is water wet?</a>
-      <a onclick='clickArticle("")'>Link 2</a>
-      <a onclick='clickArticle("")'>Link 3</a>
-    </div>
+
     <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
     <div class="dropdown-container">
       <a onclick='changeTheme("blue", "white", "#111111", "black", "#0c0c0c")'>Blue Theme</a>
@@ -158,14 +171,14 @@ body {
   </div> 
 <script>
   let params = new URLSearchParams(document.location.search);
-  let article = params.get("article");
+  let article = params.get("blogpage");
   if (document.location.search) {
-    if (document.location.search == "?article=") {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });} else {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+article+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });}
+    if (document.location.search == "?blogpage=") {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });} else {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+article+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });}
   } else {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });}
   
   function clickArticle(x) {
-  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => {           document.getElementById("main").innerHTML = content; }); 
-  document.location.search = "?article=" + x;
+  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; }); 
+  document.location.search = "?blogpage=" + x;
   }
   function copyUrl() {
   navigator.clipboard.writeText(window.location); 
