@@ -109,7 +109,7 @@ body {
 <body>
   <button onclick="copyUrl()" id="share" class="share-btn">Share <i class="fa fa-link"></i></button>
   <div id="sidenav" class="sidenav">
-    <a onclick='clickArticle("home")'>Home</a>
+    <a onclick='elemTB("sidenav")'>Home</a>
     <a onclick='clickArticle("projects")'>Projects</a>
     <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
     <div class="dropdown-container">
@@ -143,7 +143,7 @@ body {
     $(function() {
     $(".dropdown-btn").click(function() {
       this.classList.toggle("active");
-        $(this.nextElementSibling).slideToggle(100);
+        $(this.nextElementSibling).slideToggle(100); 
     });
 }); 
 </script>
@@ -165,6 +165,7 @@ body {
   navigator.clipboard.writeText(window.location); 
   document.getElementById('share').innerHTML = "Link Copied!"; 
   setTimeout(() => {document.getElementById('share').innerHTML = `Share <i class="fa fa-link"></i>`}, 1000);
+  
   }
   let firstSidenavChild = document.getElementById("sidenav").firstElementChild;
   let lastSidenavChild = document.getElementById("sidenav").lastElementChild;
@@ -172,17 +173,9 @@ body {
   function elemTB(elem) {
   let topElemChild = document.getElementById(elem).firstElementChild;
   let bottomElemChild = document.getElementById(elem).lastElementChild;
+    
   while (bottomElemChild.childElementCount > 0) {bottomElemChild = bottomElemChild.lastElementChild;}
-  document.getElementById("sidenav").onscroll = function(){$(document.getElementById("sidenav").lastElementChild).css("height");
-  if (bottomElemChild.offsetHeight < bottomElemChild.style.height){alert(bottomElemChild.style.height);}
-                                                          };
-  }
-$(document).ready(function(){
-  $("#sidenav").click(function(){
-    alert(document.getElementById("sidenav").lastElementChild.innerHTML + $(document.getElementById("sidenav").lastElementChild).css("height"));
-  });
-});
-  
-  function returnCSS(elem, value) {let a = document.querySelector(elem); let b = a+".style."+value;}
+  alert($(document.getElementById("sidenav").lastElementChild).css("height"));
+                                                          }
   </script>
 </body>
