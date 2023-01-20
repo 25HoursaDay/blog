@@ -108,13 +108,20 @@ body {
 </head>
 <body>
   <button onclick="copyUrl()" id="share" class="share-btn">Share <i class="fa fa-link"></i></button>
+  
   <div id="sidenav" class="sidenav">
     <a onclick='elemTB("sidenav")'>Home</a>
     <a onclick='clickArticle("projects")'>Projects</a>
-    <button class="dropdown-btn">Blog<i id="crt" class="fa fa-caret-right"></i></button>
+    <button class="dropdown-btn">Blog Pages<i id="crt" class="fa fa-caret-right"></i></button>
     <div class="dropdown-container">
       <a onclick='clickArticle("search-parameters")'>Search Params</a>
       <a onclick='clickArticle("bookmarklets")'>Bookmarklets</a>
+      <a onclick='clickArticle("")'>Link 3</a>
+    </div>
+    <button class="dropdown-btn">Rants<i id="crt" class="fa fa-caret-right"></i></button>
+    <div class="dropdown-container">
+      <a onclick='clickArticle("water")'>Is water wet?</a>
+      <a onclick='clickArticle("")'>Link 2</a>
       <a onclick='clickArticle("")'>Link 3</a>
     </div>
     <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
