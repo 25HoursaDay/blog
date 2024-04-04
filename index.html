@@ -1,136 +1,214 @@
 <head>
-<link id="favicon" rel="icon" type="image/x-icon" href="https://25hoursaday.github.io/favicon.ico">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href='https://fonts.googleapis.com/css?family=Noto Sans Mono' rel='stylesheet'>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<style>
-::-webkit-scrollbar {width: 4px;}
-::-webkit-scrollbar-track {background: hidden;}
-::-webkit-scrollbar-thumb {background: var(--bctc, green); background-clip: content-box;}
-::-webkit-scrollbar-thumb:hover {background: var(--thc, red);}
-.sidenav::-webkit-scrollbar {width: 0px;}
-.sidenav::-webkit-scrollbar-track {background: none;}
-.sidenav::-webkit-scrollbar-thumb {background: var(--bctc, green);}
-.sidenav::-webkit-scrollbar-thumb:hover {background: var(--thc, red);}
-body {
-  --bctc: green;
-  --bgc: #111111;
-  --bghc: #000000;
-  --thc: red;
-  --dbgc: #0c0c0c;
-  overflow-x: hidden; overflow-y: auto;
-  background-color: var(--bgc, #111111);
-  font-family: 'Noto Sans Mono';
-  }
-  img {border: 4px solid var(--bctc, green);}
-  img:hover {border-color: var(--thc, red);cursor: pointer;}
-.sidenav {
-  position: absolute;
-  height: calc(100% - 8px); width: 11%;
-  overflow-x: hidden; overflow-y: scroll;
-  border: 4px solid var(--bctc, green);
-  font-size: 16px;
-  top: 0; left: 0;
-  background-color: var(--bgc, #111111);
-}
-.sidenav a, .dropdown-btn {
-  padding: 7px 0px 7px 8px;
-  text-decoration: none;
-  font-size: 16px; 
-  color: var(--bctc, green);
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  z-index: 2;
-  font-family: 'Noto Sans Mono';
-}
-.sidenav a:hover, .dropdown-btn:hover {
-  color: var(--thc, red);
-  background-color: var(--bghc, #000000);
-}
-.main {
-  top: 0; left: calc(11% + 4px);
-  font-size: 20px;  
-  height: calc(100% - 8px); width: calc(89% - 32px);
-  background-color: var(--bgc, #111111);
-  border: 4px solid var(--bctc, green);
-  position: absolute;
-  overflow-y: scroll;
-  color: var(--bctc, green);
-  padding: 0px 10px 0px 10px;
-}
- .main a:link {color: var(--thc, red);text-decoration: none;background-color: transparent;}
- .main a:visited {color: var(--thc, red);background-color: transparent;text-decoration: none;}
- .main a:hover {color: var(--thc, red);background-color: transparent; text-decoration: underline;}
- .main a:active {color: var(--thc, red);background-color: transparent;text-decoration: underline;}
- 
- .active {background-color: var(--bghc, #000000);}
- .active i {transform: rotate(90deg);}
-  
-.dropdown-container {
-  display: none;
-  background-color: var(--dbgc, #0c0c0c);
-  width: 100%;
-}
-.dropdown-container a {
-  text-align: left;
-  padding-left: 1.5vw;
-  width: 100%;
-  font-size: 15px;
-}
-  .dropdown-container button{
-  text-align: left;
-  padding-left: 1.5vw;
-  width: 100%;
-  font-size: 16px;
-}
-  .share-btn {
-  position: absolute;
-  text-decoration: none;
-  font-size: 15px; 
-  color: var(--bctc, green);
-  display: block;
-  border: 4px solid var(--bctc, green);
-  background-color: var(--bgc, green);
-  text-align: middle;
-  cursor: pointer;
-  z-index: 3;
-  right: 9px; bottom: 9px;
-  font-family: 'Noto Sans Mono';
-  height: 32px; width: auto;
-}
-.share-btn:hover {
-  color: var(--thc, red);
-  background-color: var(--bghc, #000000);
-  border-color:var(--thc, green);
-}
-.fa-caret-right {
-  float: right;
-  margin-right: 15px;
-}
-</style>
+  <link id="favicon" rel="icon" type="image/x-icon" href="https://25hoursaday.github.io/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Noto Sans Mono' rel='stylesheet'>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <style>
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: hidden;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--bctc, green);
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--thc, red);
+    }
+
+    .sidenav::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    .sidenav::-webkit-scrollbar-track {
+      background: none;
+    }
+
+    .sidenav::-webkit-scrollbar-thumb {
+      background: var(--bctc, green);
+    }
+
+    .sidenav::-webkit-scrollbar-thumb:hover {
+      background: var(--thc, red);
+    }
+
+    body {
+      --bctc: green;
+      --bgc: #111111;
+      --bghc: #000000;
+      --thc: red;
+      --dbgc: #0c0c0c;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: var(--bgc, #111111);
+      font-family: 'Noto Sans Mono';
+    }
+
+    img {
+      border: 4px solid var(--bctc, green);
+    }
+
+    img:hover {
+      border-color: var(--thc, red);
+      cursor: pointer;
+    }
+
+    .sidenav {
+      position: absolute;
+      height: calc(100% - 8px);
+      width: 11%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border: 4px solid var(--bctc, green);
+      font-size: 16px;
+      top: 0;
+      left: 0;
+      background-color: var(--bgc, #111111);
+    }
+
+    .sidenav a,
+    .dropdown-btn {
+      padding: 7px 0px 7px 8px;
+      text-decoration: none;
+      font-size: 16px;
+      color: var(--bctc, green);
+      display: block;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      z-index: 2;
+      font-family: 'Noto Sans Mono';
+    }
+
+    .sidenav a:hover,
+    .dropdown-btn:hover {
+      color: var(--thc, red);
+      background-color: var(--bghc, #000000);
+    }
+
+    .main {
+      top: 0;
+      left: calc(11% + 4px);
+      font-size: 20px;
+      height: calc(100% - 8px);
+      width: calc(89% - 32px);
+      background-color: var(--bgc, #111111);
+      border: 4px solid var(--bctc, green);
+      position: absolute;
+      overflow-y: scroll;
+      color: var(--bctc, green);
+      padding: 0px 10px 0px 10px;
+    }
+
+    .main a:link {
+      color: var(--thc, red);
+      text-decoration: none;
+      background-color: transparent;
+    }
+
+    .main a:visited {
+      color: var(--thc, red);
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    .main a:hover {
+      color: var(--thc, red);
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    .main a:active {
+      color: var(--thc, red);
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    .active {
+      background-color: var(--bghc, #000000);
+    }
+
+    .active i {
+      transform: rotate(90deg);
+    }
+
+    .dropdown-container {
+      display: none;
+      background-color: var(--dbgc, #0c0c0c);
+      width: 100%;
+    }
+
+    .dropdown-container a {
+      text-align: left;
+      padding-left: 1.5vw;
+      width: 100%;
+      font-size: 15px;
+    }
+
+    .dropdown-container button {
+      text-align: left;
+      padding-left: 1.5vw;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .share-btn {
+      position: absolute;
+      text-decoration: none;
+      font-size: 15px;
+      color: var(--bctc, green);
+      display: block;
+      border: 4px solid var(--bctc, green);
+      background-color: var(--bgc, green);
+      text-align: middle;
+      cursor: pointer;
+      z-index: 3;
+      right: 9px;
+      bottom: 9px;
+      font-family: 'Noto Sans Mono';
+      height: 32px;
+      width: auto;
+    }
+
+    .share-btn:hover {
+      color: var(--thc, red);
+      background-color: var(--bghc, #000000);
+      border-color: var(--thc, green);
+    }
+
+    .fa-caret-right {
+      float: right;
+      margin-right: 15px;
+    }
+
+  </style>
 </head>
+
 <body>
   <button onclick="copyUrl()" id="share" class="share-btn">Share <i class="fa fa-link"></i></button>
-  
+
   <div id="sidenav" class="sidenav">
     <a onclick='clickArticle("home")'>Home</a>
     <a onclick='clickArticle("projects")'>Projects</a>
-    <button class="dropdown-btn">Blog Pages<i id="crt" class="fa fa-caret-right"></i></button>
+    <button class="dropdown-btn">Blog Pages<i class="fa fa-caret-right"></i></button>
     <div class="dropdown-container">
-      
-      <button class="dropdown-btn">Articles<i id="crt" class="fa fa-caret-right"></i></button>
+
+      <button class="dropdown-btn">Articles<i class="fa fa-caret-right"></i></button>
       <div class="dropdown-container">
-      <a onclick='clickArticle("search-parameters")'>Search Params</a>
-      <a onclick='clickArticle("bookmarklets")'>Bookmarklets</a>
-      <a onclick='clickArticle("")'>Link 3</a>
+        <a onclick='clickArticle("search-parameters")'>Search Params</a>
+        <a onclick='clickArticle("bookmarklets")'>Bookmarklets</a>
+        <a onclick='clickArticle("")'>Link 3</a>
       </div>
-      
-      <button class="dropdown-btn">Rants<i id="crt" class="fa fa-caret-right"></i></button>
+
+      <button class="dropdown-btn">Rants<i class="fa fa-caret-right"></i></button>
       <div class="dropdown-container">
         <a onclick='clickArticle("water-wet")'>Is water wet?</a>
         <a onclick='clickArticle("")'>Link 2</a>
@@ -139,7 +217,7 @@ body {
 
     </div>
 
-    <button class="dropdown-btn">Themes<i id="crt" class="fa fa-caret-right"></i></button>
+    <button class="dropdown-btn">Themes<i class="fa fa-caret-right"></i></button>
     <div class="dropdown-container">
       <a onclick='changeTheme("blue", "white", "#111111", "black", "#0c0c0c")'>Blue Theme</a>
       <a onclick='changeTheme("red","tomato","#111111","black", "#0c0c0c")'>Red Theme</a>
@@ -148,50 +226,81 @@ body {
     </div>
     <br>
   </div>
-  <script> 
-    function changeTheme(bctc, thc, bgc, bghc, dbgc) { 
-     localStorage.removeItem("themeinfo");
-     document.body.style.setProperty('--bctc', bctc);
-     document.body.style.setProperty('--thc', thc);
-     document.body.style.setProperty('--bgc', bgc);
-     document.body.style.setProperty('--bghc', bghc); 
-     document.body.style.setProperty('--dbgc', dbgc);  
-     localStorage.setItem("themeinfo", bctc +','+ thc +','+ bgc +','+ bghc +','+ dbgc + ','); 
-     } 
-    if (localStorage.getItem("themeinfo")) {const themeArray = localStorage.getItem("themeinfo").split(","); 
-    changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4]);}
-    
+  <script>
+    function changeTheme(bctc, thc, bgc, bghc, dbgc) {
+      localStorage.removeItem("themeinfo");
+      document.body.style.setProperty('--bctc', bctc);
+      document.body.style.setProperty('--thc', thc);
+      document.body.style.setProperty('--bgc', bgc);
+      document.body.style.setProperty('--bghc', bghc);
+      document.body.style.setProperty('--dbgc', dbgc);
+      localStorage.setItem("themeinfo", bctc + ',' + thc + ',' + bgc + ',' + bghc + ',' + dbgc + ',');
+    }
+    if (localStorage.getItem("themeinfo")) {
+      const themeArray = localStorage.getItem("themeinfo").split(",");
+      changeTheme(themeArray[0], themeArray[1], themeArray[2], themeArray[3], themeArray[4]);
+    }
+
     $(function() {
-    $(".dropdown-btn").click(function() {
-      this.classList.toggle("active");
-        $(this.nextElementSibling).slideToggle(100); 
+      $(".dropdown-btn").click(function() {
+        this.classList.toggle("active");
+        $(this.nextElementSibling).slideToggle(100);
+      });
     });
-}); 
-</script>
-<div class="main" id="main">
-  <p>Resource is loading...</p>
-  </div> 
-<script>
-  let params = new URLSearchParams(document.location.search);
-  let article = params.get("blogpage");
-  if (document.location.search) {
-    if (document.location.search == "?blogpage=") {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });} else {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+article+"/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });}
-  } else {fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => { return result.text();}).then((content) => { document.getElementById("main").innerHTML = content; });}
-  
-  function clickArticle(x) {
-  fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/"+x+"/text.html").then((result) => { return result.text();}).then((content) => {
-  document.getElementById("main").innerHTML = content; }); 
-  document.location.search = "?blogpage=" + x;
-  }
-  function copyUrl() {
-  navigator.clipboard.writeText(window.location); 
-  document.getElementById('share').innerHTML = "Link Copied!"; 
-  setTimeout(() => {document.getElementById('share').innerHTML = `Share <i class="fa fa-link"></i>`}, 1000);
-  }
-  function elemTB(elem) {
-  let topElemChild = document.getElementById(elem).firstElementChild;
-  let bottomElemChild = document.getElementById(elem).lastElementChild;
-  while (bottomElemChild.childElementCount > 0) {bottomElemChild = bottomElemChild.lastElementChild;}
-  }
+
+  </script>
+  <div class="main" id="main">
+    <p>Resource is loading...</p>
+  </div>
+  <script>
+    let params = new URLSearchParams(document.location.search);
+    let article = params.get("blogpage");
+    if (document.location.search) {
+      if (document.location.search == "?blogpage=") {
+        fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => {
+          return result.text();
+        }).then((content) => {
+          document.getElementById("main").innerHTML = content;
+        });
+      } else {
+        fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/" + article + "/text.html").then((result) => {
+          return result.text();
+        }).then((content) => {
+          document.getElementById("main").innerHTML = content;
+        });
+      }
+    } else {
+      fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/home/text.html").then((result) => {
+        return result.text();
+      }).then((content) => {
+        document.getElementById("main").innerHTML = content;
+      });
+    }
+
+    function clickArticle(x) {
+      fetch("https://raw.githubusercontent.com/25HoursaDay/blog/main/" + x + "/text.html").then((result) => {
+        return result.text();
+      }).then((content) => {
+        document.getElementById("main").innerHTML = content;
+      });
+      params.set("?blogpage=", x);
+    }
+
+    function copyUrl() {
+      navigator.clipboard.writeText(location.href);
+      document.getElementById('share').innerHTML = "Link Copied!";
+      setTimeout(() => {
+        document.getElementById('share').innerHTML = `Share <i class="fa fa-link"></i>`
+      }, 1000);
+    }
+
+    function elemTB(elem) {
+      let topElemChild = document.getElementById(elem).firstElementChild;
+      let bottomElemChild = document.getElementById(elem).lastElementChild;
+      while (bottomElemChild.childElementCount > 0) {
+        bottomElemChild = bottomElemChild.lastElementChild;
+      }
+    }
+
   </script>
 </body>
